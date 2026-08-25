@@ -1,0 +1,34 @@
+# Ambient Context Engine — Core Dependencies
+
+# Capture Layer
+mss>=9.0
+pywin32>=306
+opencv-python>=4.8
+Pillow>=10.0
+
+# Processing — OCR
+pytesseract>=0.3.10
+
+# Processing — Speech-to-Text
+openai-whisper>=20231117
+faster-whisper>=1.0.0; sys_platform != 'win32'
+
+# Processing — Audio Capture
+sounddevice>=0.4
+
+# Processing — Embeddings
+sentence-transformers>=2.2
+numpy>=1.24
+
+# Storage — Vector Search
+sqlite-vec>=0.1.6
+
+# Intelligence — Ollama API
+requests>=2.31
+
+# Interface — Web UI Dashboard
+Flask>=3.0.0
+Flask-Cors>=4.0.0
+
+# Utilities
+psutil>=5.9

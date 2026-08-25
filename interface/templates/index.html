@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Context Engine</title>
+    <!-- Use Inter font for a cleaner, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Lucide icons for clean, thin SVG icons matching the reference -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="left-nav">
+            <div class="nav-header">
+                <i data-lucide="search" class="icon-sm"></i>
+                <i data-lucide="github" class="icon-sm"></i>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i data-lucide="message-square" class="icon-sm"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="#" class="nav-item" id="nav-timeline">
+                    <i data-lucide="calendar" class="icon-sm"></i>
+                    <span>Timeline</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="activity" class="icon-sm"></i>
+                    <span>Activity</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="library" class="icon-sm"></i>
+                    <span>Library</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="clock" class="icon-sm"></i>
+                    <span>Scheduled</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="network" class="icon-sm"></i>
+                    <span>Connections</span>
+                </a>
+            </nav>
+
+            <div class="nav-section">
+                <h4>RECENTS</h4>
+            </div>
+            
+            <div class="nav-section">
+                <h4>SCHEDULED</h4>
+                <i data-lucide="power" class="icon-sm right-icon"></i>
+            </div>
+
+            <div class="nav-footer">
+                <a href="#" class="nav-item">
+                    <i data-lucide="settings" class="icon-sm"></i>
+                    <span>Settings</span>
+                </a>
+                <i data-lucide="help-circle" class="icon-sm footer-right"></i>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-workspace">
+            
+            <!-- Chat Interface Container -->
+            <div class="workspace-inner">
+                
+                <!-- Welcome / Empty State (centered) -->
+                <div class="welcome-state" id="welcome-state">
+                    <div class="welcome-icon">
+                        <i data-lucide="monitor-smartphone" class="icon-lg"></i>
+                    </div>
+                    <h2>How can I help today?</h2>
+                    <p class="subtitle">From everything you've seen, said, or heard</p>
+                    
+                    <div class="quick-actions">
+                        <button class="action-card highlight" id="btn-day-recap">
+                            <div class="card-icon"><i data-lucide="calendar-days"></i></div>
+                            <div class="card-text">
+                                <h3>Day Recap</h3>
+                                <p>Today's accomplishments, key moments, and unfinished work</p>
+                            </div>
+                            <i data-lucide="arrow-right" class="arrow"></i>
+                        </button>
+                        
+                        <button class="action-card" id="btn-insights">
+                            <div class="card-icon"><i data-lucide="list-todo"></i></div>
+                            <div class="card-text">
+                                <h3>Insights</h3>
+                                <p id="nudge-text">Checking for patterns...</p>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="action-pills">
+                        <span class="pill">Time Breakdown</span>
+                        <span class="pill">Automate My Work</span>
+                        <span class="pill">Meeting Prep</span>
+                        <span class="pill">Blockers</span>
+                        <span class="pill">+ custom</span>
+                    </div>
+                </div>
+
+                <!-- Chat History (Hidden initially) -->
+                <div class="chat-history hidden" id="chat-history">
+                    <!-- Messages will be injected here -->
+                </div>
+                
+                <!-- Timeline View (Hidden initially) -->
+                <div class="timeline-view hidden" id="timeline-view">
+                    <div class="timeline-header">
+                        <h2>Timeline</h2>
+                        <div class="stats">
+                            DB: <span id="stat-db">--</span> MB | Captures: <span id="stat-caps">--</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content" id="timeline-container">
+                        <!-- Sessions go here -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Persistent Bottom Input Bar -->
+            <div class="input-container">
+                <div class="input-box" id="input-box">
+                    <input type="text" id="chat-input" placeholder="Ask about your screen... (/ for commands, @ chats, $ skills)" autocomplete="off">
+                    <div class="input-tools">
+                        <button class="tool-btn"><i data-lucide="plus"></i></button>
+                        <div class="tool-group right">
+                            <button class="tool-btn text-btn"><i data-lucide="edit-3" class="icon-xs"></i> AUTO</button>
+                            <button class="tool-btn text-btn"><i data-lucide="chevron-up" class="icon-xs"></i> MEDIUM</button>
+                            <button class="tool-btn"><i data-lucide="circle" class="icon-xs outline"></i></button>
+                            <button class="tool-btn submit-btn" id="chat-submit"><i data-lucide="send"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
