@@ -189,7 +189,7 @@ ambient-context-engine/
 
 1. **Branching Strategy**: Create feature branches from `main` (e.g., `feature/custom-ocr`, `fix/audio-buffer`).
 2. **Local Testing**: Always run `python main.py` locally to verify that database tables create smoothly and vector extensions load without issues.
-3. **Commit Messages**: Keep commit messages concise and descriptive (e.g., `feat(rag): add confidence score thresholding`).
+3. **Commit Messages**: Keep commit messages concise and descriptive.
 
 ---
 
